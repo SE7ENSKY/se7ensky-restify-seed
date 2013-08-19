@@ -1,5 +1,5 @@
-APP_NAME = 'test'
-APP_VERSION = '0.0.1'
+APP_NAME = 'se7ensky-restify-seed'
+APP_VERSION = '0.0.2'
 
 restify = require 'restify'
 bunyan = require 'bunyan'
@@ -11,5 +11,6 @@ require('se7ensky-restify-preflight')(server)
 require('se7ensky-restify-resource')(server, log, "#{__dirname}/resources")
 
 server.resource 'customers'
+server.resource 'secure'
 
 server.listen process.env.PORT or 3000
